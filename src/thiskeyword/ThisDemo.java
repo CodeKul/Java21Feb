@@ -1,5 +1,7 @@
 package thiskeyword;
 
+import statickeyword.StaticDemo;
+
 /**
  * 1 .this keyword is used to refer current class instance variable
  * 2. this keyword is used to invoke current class methods
@@ -36,6 +38,9 @@ public class ThisDemo {
         System.out.println("In test method");
     }
     public static void main(String[] args) {
+
+
+        StaticDemo.show();
 
         ThisDemo obj = new ThisDemo(1,"Rahul","Pune");
 

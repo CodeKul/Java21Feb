@@ -1,17 +1,20 @@
 package finalkeyword;
 
-import java.util.ArrayList;
-import java.util.List;
+/**
+ * 1. if you declare final variable then you cannot reassign value
+ * 2. if you declare final method then you cannot override the method
+ * 3. if you declare final class then you cannot inherit that class
+ */
 
-public class FinalDemo {
+public  class FinalDemo {
 
     final int TEST =10;
 
     class A{
 
     }
-    public void display(){
-//        i = 35;
+    public final void display(){
+//        TEST = 35;
         System.out.println(TEST);
     }
 
@@ -26,8 +29,9 @@ public class FinalDemo {
 
 class C extends FinalDemo {
 
-    @Override
-    public void display() {
-        super.display();
-    }
+//    @Override
+//    public void display() {
+//        super.display();
+//
+//    }
 }
