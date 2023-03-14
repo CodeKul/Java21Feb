@@ -27,3 +27,9 @@ public class DoWhileDemo {
         System.out.println("sum=>"+sum);
     }
 }
+//random value - 1 to 100 - 34
+// int i = (int) (Math.random()*100) +1
+//20
+//30
+//40
+//34
