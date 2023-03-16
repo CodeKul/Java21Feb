@@ -7,7 +7,7 @@ public class GuessDemo {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
-        int num, guess, attempt = 0;
+        int num, guess, attempt=0;
         num = (int) (Math.random() * 100) + 1;
 
         do {
