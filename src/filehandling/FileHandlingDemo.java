@@ -8,7 +8,7 @@ public class FileHandlingDemo {
         try {
 //            File file = new File("");
 //            file.createNewFile();
-
+   //bytestream class
             FileOutputStream fileOutputStream = new FileOutputStream("Sample.txt");
             String str = "Welcome";
             byte b[]  = str.getBytes();

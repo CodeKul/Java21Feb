@@ -1,0 +1,1 @@
+"FUNCTION: public.fn_service_rate_m"
