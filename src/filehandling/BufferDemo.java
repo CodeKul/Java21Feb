@@ -22,13 +22,13 @@ public class BufferDemo {
             FileInputStream fileInputStream = new FileInputStream("test1.txt");
             BufferedInputStream bufferedInputStream = new BufferedInputStream(fileInputStream);
             int i = bufferedInputStream.read();
-            while (i != -1){
-                System.out.print((char)i);
+            while (i != -1) {
+                System.out.print((char) i);
                 i = bufferedInputStream.read();
             }
             bufferedInputStream.close();
             fileInputStream.close();
-        }  catch (IOException e) {
+        } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
