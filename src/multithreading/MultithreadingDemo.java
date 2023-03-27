@@ -3,15 +3,46 @@ package multithreading;
 public class MultithreadingDemo {
 
     public static void main(String[] args) {
-        System.out.println("In main thread");
-        System.out.println(Thread.currentThread().getName());
+//        System.out.println("In main thread");
+//        System.out.println(Thread.currentThread().getName());
 
-        Hii hii = new Hii();
-        hii.start();
+//        Hii hii = new Hii();//new
+//        //runnable
+//        hii.start();//running
+//
+//        Hello hello = new Hello();
+//        Thread t1 = new Thread(hello);
+//        t1.start();
+//
+//        int num=10;
 
-        Hello hello = new Hello();
-        Thread t1 = new Thread(hello);
+        Thread t1 = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                for (int i = 1; i <= 5; i++) {
+                    System.out.println("Hii");
+                    try {
+                        Thread.sleep(500);
+                    } catch (InterruptedException e) {
+                        throw new RuntimeException(e);
+                    }
+                }
+            }
+        });
+
+        Thread t2 = new Thread(() -> {
+            for (int i = 1; i <= 5; i++) {
+                System.out.println("Hello");
+                try {
+                    Thread.sleep(500);
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+        });
+
         t1.start();
+        t2.start();
     }
 }
 
@@ -19,8 +50,15 @@ class Hii extends Thread{
 
     @Override
     public void run() {
-        System.out.println("In run method");
-        System.out.println(Thread.currentThread().getName());
+        for (int i = 1; i <= 5; i++) {
+            System.out.println("Hii");
+
+            try {
+                Thread.sleep(500);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+        }
     }
 }
 
@@ -28,7 +66,13 @@ class Hello implements Runnable{
 
     @Override
     public void run() {
-        System.out.println("In run Hello method");
-        System.out.println(Thread.currentThread().getName());
+        for (int i = 1; i <= 5; i++) {
+            System.out.println("Hello");
+            try {
+                Thread.sleep(500);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+        }
     }
 }
