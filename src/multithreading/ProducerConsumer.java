@@ -3,13 +3,34 @@ package multithreading;
 public class ProducerConsumer {
 
     int num;
-    public void getNum() {
+
+    boolean flag = true;
+
+    public synchronized void getNum() {
+        if(flag){
+            try {
+                wait();
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+        }
         System.out.println("Get: " + num);
+        flag =true;
+        notify();
     }
 
-    public void setNum(int num) {
+    public synchronized void setNum(int num) {
+        if(!flag){
+            try {
+                wait();
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+        }
         this.num = num;
         System.out.println("Set: " + num);
+        flag = false;
+        notify();
     }
 }
 
