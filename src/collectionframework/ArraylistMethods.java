@@ -2,10 +2,13 @@ package collectionframework;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Iterator;
 import java.util.List;
 
 public class ArraylistMethods {
     public static void main(String[] args) {
+
+        var arraylistMethods = new ArraylistMethods();
 
         List<Integer> list1 = new ArrayList<>();
         list1.add(10);
@@ -57,6 +60,10 @@ public class ArraylistMethods {
             System.out.println(list4.get(i)*list5.get(j));
         }
 
+        Iterator<Integer> iterator = list1.iterator();
+        while (iterator.hasNext()){
+            System.out.println(iterator.next());
+        }
 
     }
 }
