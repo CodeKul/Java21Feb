@@ -12,7 +12,7 @@ public class ArrayListDemo {
         long[] arr = new long[10];
 
 
-        List<Integer> list = new ArrayList<>();
+        List<Integer> list = new ArrayList<Integer>();
 
         list.add(10);
         list.add(20);

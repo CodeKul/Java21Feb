@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class Employee implements Comparable<Employee>{
+public class Employee implements Comparable<ComparatorDemo>{
 
     int id;
 
@@ -22,16 +22,16 @@ public class Employee implements Comparable<Employee>{
 
     public static void main(String[] args) {
 
-        Employee obj1 =new Employee(26,"Pranav","Pune");
-        Employee obj2 =new Employee(26,"Amit","Pune");
-        Employee obj3 =new Employee(53,"Shree","Pune");
+        ComparatorDemo obj1 =new ComparatorDemo(26,"Pranav","Pune");
+        ComparatorDemo obj2 =new ComparatorDemo(26,"Amit","Pune");
+        ComparatorDemo obj3 =new ComparatorDemo(53,"Shree","Pune");
 
-        List<Employee> list = new ArrayList<>();
+        List<ComparatorDemo> list = new ArrayList<>();
         list.add(obj1);
         list.add(obj2);
         list.add(obj3);
 
-        Collections.sort(list);
+//        Collections.sort(list);
 
         list.forEach(s->{
             System.out.println(s.id+" "+s.name+" "+s.address);
@@ -39,12 +39,12 @@ public class Employee implements Comparable<Employee>{
     }
 
     @Override
-    public int compareTo(@NotNull Employee o) {
+    public int compareTo(@NotNull ComparatorDemo o) {
         return this.name.compareTo(o.name);
     }
 
 //    @Override
-//    public int compareTo(Employee o) {
+//    public int compareTo(ComparatorDemo o) {
 //       if(this.id == o.id){
 //           return 0;
 //       }else if(this.id>o.id){
