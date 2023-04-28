@@ -1,16 +1,12 @@
 package collectionframework;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
 
 public class ArrayListDemo {
 
     public static void main(String[] args) {
 
         long[] arr = new long[10];
-
 
         List<Integer> list = new ArrayList<Integer>();
 
