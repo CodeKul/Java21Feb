@@ -13,6 +13,10 @@ public class DefaultAndStatic implements MyInterface2{
 
     }
 
+//    @Override
+//    public void show() {
+//        System.out.println("In class show");
+//    }
 }
 
 interface MyInterface2{
