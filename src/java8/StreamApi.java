@@ -3,8 +3,11 @@ package java8;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Optional;
+import java.util.function.BinaryOperator;
 import java.util.function.Function;
 import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
 /**
  *
@@ -44,7 +47,7 @@ public class StreamApi {
 
         Function<Integer,Integer> function = f->f*2;
 
-        list.stream().map(function).forEach(System.out::println);
+        list.stream().map(function).collect(Collectors.toSet());
 
         Predicate<Integer> predicate = p->p>5000;
 
@@ -58,6 +61,19 @@ public class StreamApi {
         list.stream().filter(greaterThan5).forEach(System.out::println);
 
         list.stream().sorted(Comparator.reverseOrder()).forEach(System.out::println);
+
+        List<Integer> list1 = Arrays.asList(1,23,4,5,5,5);
+
+        Optional<Integer> t =  list1.stream().reduce((Integer integer, Integer integer2)-> {
+                return integer+integer2;
+        });
+
+        System.out.println(t.get());
+
+        List<String> strings = Arrays.asList("India","Pakistan","ShriLanka","Americaiooo");
+
+        Optional<String> s = strings.stream().reduce((w1,w2)->w1.length()>w2.length()?w1:w2);
+        System.out.println(s.get());
 
     }
 }
